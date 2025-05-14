@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import Image from "next/image";
 import {
@@ -14,6 +14,7 @@ import {
   FaBehance,
   FaXTwitter,
 } from "react-icons/fa6";
+import Link from "next/link";
 
 export default function Footer() {
   return (
@@ -66,20 +67,50 @@ export default function Footer() {
         {/* Column 3 */}
         <div>
           <ul className="space-y-3">
-            <li className="flex items-center gap-2 hover:text-white cursor-pointer transition">
-              <BookmarkIcon className="h-5 w-5 text-white" /> Pricing
+            <li>
+              <Link
+                href="/pricing"
+                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+              >
+                <BookmarkIcon className="h-5 w-5 text-white" />
+                Pricing
+              </Link>
             </li>
-            <li className="flex items-center gap-2 hover:text-white cursor-pointer transition">
-              <EnvelopeIcon className="h-5 w-5 text-white" /> Join to 77S design
+            <li>
+              <Link
+                href="/join"
+                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+              >
+                <EnvelopeIcon className="h-5 w-5 text-white" />
+                Join to 77S design
+              </Link>
             </li>
-            <li className="flex items-center gap-2 hover:text-white cursor-pointer transition">
-              <QuestionMarkCircleIcon className="h-5 w-5 text-white" /> Help
+            <li>
+              <Link
+                href="/help/en"
+                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+              >
+                <QuestionMarkCircleIcon className="h-5 w-5 text-white" />
+                Help
+              </Link>
             </li>
-            <li className="flex items-center gap-2 hover:text-white cursor-pointer transition">
-              <ExclamationCircleIcon className="h-5 w-5 text-white" /> About
+            <li>
+              <Link
+                href="/about"
+                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+              >
+                <ExclamationCircleIcon className="h-5 w-5 text-white" />
+                About
+              </Link>
             </li>
-            <li className="flex items-center gap-2 hover:text-white cursor-pointer transition">
-              <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" /> Contact
+            <li>
+              <Link
+                href="/contact"
+                className="flex items-center gap-2 hover:text-white cursor-pointer transition"
+              >
+                <ChatBubbleLeftRightIcon className="h-5 w-5 text-white" />
+                Contact
+              </Link>
             </li>
           </ul>
 

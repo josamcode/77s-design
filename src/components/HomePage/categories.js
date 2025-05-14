@@ -21,7 +21,7 @@ export default function Categories() {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
           {categories.map((cat, index) => (
-            <Link href="#" key={index} className="block">
+            <Link href="/categories" key={index} className="block">
               <div className="flex justify-center items-center transition-transform transform hover:scale-105">
                 <Image
                   src={"/HomePage" + cat.src}

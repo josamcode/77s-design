@@ -35,15 +35,15 @@ export default function Header() {
             </Link>
 
             <nav className="hidden md:flex space-x-6 text-[#545457] font-medium">
-              <a href="#" className="mx-2 text-[17px]">
+              <Link href="/categories" className="mx-2 text-[17px]">
                 Categories
-              </a>
-              <a href="#" className="mx-2 text-[17px]">
+              </Link>
+              <Link href="/discover" className="mx-2 text-[17px]">
                 Discover
-              </a>
-              <a href="#" className="mx-2 text-[17px]">
+              </Link>
+              <Link href="/designers" className="mx-2 text-[17px]">
                 Designers
-              </a>
+              </Link>
             </nav>
           </div>
 
