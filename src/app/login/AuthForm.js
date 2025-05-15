@@ -71,7 +71,7 @@ export default function AuthForm() {
           <span className="text-white sm:text-[30px] lg:text-[50px] font-bold">
             Discover <br />
           </span>
-          the world's best <br />
+          the world&apos;s best <br />
           community of
           <br />
           <span className="text-white sm:text-[30px] lg:text-[50px] font-bold">
@@ -231,7 +231,10 @@ export default function AuthForm() {
             {isLogin && (
               <div className="flex items-center justify-between text-base text-gray-500">
                 <label className="flex items-center space-x-3">
-                  <input type="checkbox" className="accent-indigo-600 w-5 h-5" />
+                  <input
+                    type="checkbox"
+                    className="accent-indigo-600 w-5 h-5"
+                  />
                   <span>Remember Me</span>
                 </label>
                 <span className="cursor-pointer hover:text-indigo-600">
