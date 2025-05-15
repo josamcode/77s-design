@@ -56,7 +56,7 @@ export default function AuthForm() {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen grid grid-cols-1 md:grid-cols-5 p-12">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 min-h-screen grid grid-cols-1 md:grid-cols-6 p-12">
       <Toaster position="top-right" reverseOrder={false} />
 
       {/* Left Panel */}
@@ -71,7 +71,7 @@ export default function AuthForm() {
           <span className="text-white sm:text-[30px] lg:text-[50px] font-bold">
             Discover <br />
           </span>
-          the world’s best <br />
+          the world's best <br />
           community of
           <br />
           <span className="text-white sm:text-[30px] lg:text-[50px] font-bold">
@@ -83,20 +83,20 @@ export default function AuthForm() {
       </div>
 
       {/* Right Panel */}
-      <div className="md:col-span-3 flex flex-col justify-center px-6 py-12">
-        <div className="w-full max-w-md mx-auto">
+      <div className="md:col-span-4 flex flex-col justify-center px-8 py-16">
+        <div className="w-full max-w-lg mx-auto">
           <Image
             src="/logo.svg"
             alt="77S Logo"
-            width={120}
-            height={40}
-            className="mb-6"
+            width={150}
+            height={50}
+            className="mb-8"
           />
 
           {/* Tabs */}
-          <div className="flex space-x-8 mb-4">
+          <div className="flex space-x-12 mb-6">
             <button
-              className={`pb-2 cursor-pointer ${
+              className={`pb-2 text-lg cursor-pointer ${
                 !isLogin
                   ? "text-indigo-600 font-bold border-b-4 border-indigo-600"
                   : "text-gray-400"
@@ -107,7 +107,7 @@ export default function AuthForm() {
             </button>
 
             <button
-              className={`pb-2 cursor-pointer ${
+              className={`pb-2 text-lg cursor-pointer ${
                 isLogin
                   ? "text-indigo-600 font-bold border-b-4 border-indigo-600"
                   : "text-gray-400"
@@ -118,39 +118,39 @@ export default function AuthForm() {
             </button>
           </div>
 
-          <div className="mb-6">
+          <div className="mb-8">
             <GoogleLoginButton userType={watch("role")} />
           </div>
 
-          <p className="text-center text-sm text-gray-500 mb-6">
+          <p className="text-center text-base text-gray-500 mb-8">
             {isLogin
               ? "or Login with your 77S design account"
               : "Or, Create an account with email."}
           </p>
 
-          <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
+          <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
             {!isLogin && (
-              <div className="flex flex-col space-y-3">
-                <label className="flex items-center space-x-2 cursor-pointer">
+              <div className="flex flex-col space-y-4">
+                <label className="flex items-center space-x-3 cursor-pointer text-base">
                   <input
                     type="radio"
                     value="client"
                     {...register("role", { required: !isLogin })}
-                    className="accent-indigo-600"
+                    className="accent-indigo-600 w-5 h-5"
                   />
                   <span>Need design</span>
                 </label>
-                <label className="flex items-center space-x-2 cursor-pointer">
+                <label className="flex items-center space-x-3 cursor-pointer text-base">
                   <input
                     type="radio"
                     value="designer"
                     {...register("role", { required: !isLogin })}
-                    className="accent-indigo-600"
+                    className="accent-indigo-600 w-5 h-5"
                   />
                   <span>Designer</span>
                 </label>
                 {errors.role && (
-                  <span className="text-red-500 text-sm">
+                  <span className="text-red-500 text-base">
                     Please select a role
                   </span>
                 )}
@@ -162,7 +162,7 @@ export default function AuthForm() {
                 <input
                   type="text"
                   placeholder="First Name"
-                  className="w-full border rounded px-4 py-2 mb-4 md:mb-0"
+                  className="w-full border rounded-lg px-5 py-3 text-base mb-4 md:mb-0"
                   {...register("firstName", {
                     required: "First name is required",
                   })}
@@ -170,7 +170,7 @@ export default function AuthForm() {
                 <input
                   type="text"
                   placeholder="Last Name"
-                  className="w-full border rounded px-4 py-2"
+                  className="w-full border rounded-lg px-5 py-3 text-base"
                   {...register("lastName", {
                     required: "Last name is required",
                   })}
@@ -178,12 +178,12 @@ export default function AuthForm() {
               </div>
             )}
             {errors.firstName && (
-              <span className="text-red-500 text-sm">
+              <span className="text-red-500 text-base">
                 {errors.firstName.message}
               </span>
             )}
             {errors.lastName && (
-              <span className="text-red-500 text-sm">
+              <span className="text-red-500 text-base">
                 {errors.lastName.message}
               </span>
             )}
@@ -191,11 +191,11 @@ export default function AuthForm() {
             <input
               type="email"
               placeholder="Email"
-              className="w-full border rounded px-4 py-2"
+              className="w-full border rounded-lg px-5 py-3 text-base"
               {...register("email", { required: "Email is required" })}
             />
             {errors.email && (
-              <span className="text-red-500 text-sm">
+              <span className="text-red-500 text-base">
                 {errors.email.message}
               </span>
             )}
@@ -204,7 +204,7 @@ export default function AuthForm() {
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
-                className="w-full border rounded px-4 py-2"
+                className="w-full border rounded-lg px-5 py-3 text-base"
                 {...register("password", {
                   required: "Password is required",
                   minLength: isLogin
@@ -216,22 +216,22 @@ export default function AuthForm() {
                 })}
               />
               <span
-                className="absolute right-3 top-3 cursor-pointer text-gray-400"
+                className="absolute right-4 top-4 cursor-pointer text-gray-400 text-lg"
                 onClick={() => setShowPassword(!showPassword)}
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </span>
             </div>
             {errors.password && (
-              <span className="text-red-500 text-sm">
+              <span className="text-red-500 text-base">
                 {errors.password.message}
               </span>
             )}
 
             {isLogin && (
-              <div className="flex items-center justify-between text-sm text-gray-500">
-                <label className="flex items-center space-x-2">
-                  <input type="checkbox" className="accent-indigo-600" />
+              <div className="flex items-center justify-between text-base text-gray-500">
+                <label className="flex items-center space-x-3">
+                  <input type="checkbox" className="accent-indigo-600 w-5 h-5" />
                   <span>Remember Me</span>
                 </label>
                 <span className="cursor-pointer hover:text-indigo-600">
@@ -241,13 +241,13 @@ export default function AuthForm() {
             )}
 
             {!isLogin && (
-              <p className="text-xs text-gray-500">
+              <p className="text-sm text-gray-500">
                 Use 8 or more characters with a mix of letters, numbers and
                 symbols
               </p>
             )}
             {!isLogin && (
-              <p className="text-xs text-gray-500">
+              <p className="text-sm text-gray-500">
                 By signing up, you agree to our{" "}
                 <span className="underline cursor-pointer hover:text-indigo-600">
                   Terms
@@ -261,7 +261,7 @@ export default function AuthForm() {
 
             <button
               type="submit"
-              className="w-full bg-indigo-600 text-white font-semibold py-2 rounded mt-2 cursor-pointer"
+              className="w-full bg-indigo-600 text-white font-semibold py-3 rounded-lg text-lg mt-4 cursor-pointer hover:bg-indigo-700"
             >
               {isLogin ? "Log in" : "Sign Up"}
             </button>

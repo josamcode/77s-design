@@ -3,17 +3,17 @@
 import Image from "next/image";
 import { useState } from "react";
 
-function CustomDropdown({ options, defaultValue }) {
+function CustomDropdown({ options, defaultValue, className = "" }) {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(defaultValue || options[0]);
 
   return (
-    <div className="relative w-full sm:w-auto flex-1">
+    <div className={`relative w-full sm:w-auto flex-1 ${className}`}>
       <button
         onClick={() => setOpen(!open)}
         className="w-full cursor-pointer bg-white text-left px-4 py-2 text-[#9E9EA3] rounded flex justify-between items-center"
       >
-        <span className="truncate max-w-[180px] block overflow-hidden whitespace-nowrap">
+        <span className="truncate max-w-[300px] block overflow-hidden whitespace-nowrap">
           {selected}
         </span>
 
@@ -43,24 +43,28 @@ function CustomDropdown({ options, defaultValue }) {
 export default function Hero() {
   return (
     <section className="bg-[#F5F7FA]">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between">
+      <div suppressHydrationWarning className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between">
         {/* Left Column */}
-        <div className="lg:w-1/2 w-full text-center lg:text-left">
+        <div suppressHydrationWarning className="lg:w-1/2 w-full text-center lg:text-left">
           <h1 className="text-3xl md:text-4xl lg:text-[52px] font-bold text-[#3D3D3F] leading-tight">
             Access to talented and creative designers for original designs
           </h1>
 
           {/* Form Row */}
-          <div className="mt-8 h-auto sm:h-[80px] bg-white rounded-lg shadow-md flex flex-col sm:flex-row gap-4 sm:gap-2 items-center">
+          <div suppressHydrationWarning className="mt-8 h-auto sm:h-[80px] bg-white rounded-lg shadow-md flex flex-col sm:flex-row gap-4 sm:gap-2 items-center">
             <CustomDropdown
+              className="sm:flex-[2]"
               options={[
                 "Logo, Brand Identity, Packaging...",
                 "Web Design",
                 "App UI",
               ]}
             />
-            <CustomDropdown options={["Contest", "Project 1-to-1"]} />
-            <button className="w-full cursor-pointer h-full sm:w-auto bg-[#ff5a5f] text-white font-semibold rounded-tr-[10px] rounded-br-[10px] px-6 py-2">
+            <CustomDropdown 
+              className="sm:flex-[1.3]"
+              options={["Contest", "Project 1-to-1"]} 
+            />
+            <button className="w-full cursor-pointer h-full sm:w-auto bg-[#ff5a5f] text-white font-semibold text-xl rounded-tr-[10px] rounded-br-[10px] px-10 py-2">
               Start
             </button>
           </div>

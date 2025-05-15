@@ -15,17 +15,17 @@ export default function ReferralBox() {
 
   return (
     <section className="bg-gray-50 py-16 px-4">
-      <div className="max-w-xl mx-auto bg-[#FF5F6B] rounded-lg p-8">
+      <div suppressHydrationWarning className="max-w-xl mx-auto bg-[#FF5F6B] rounded-lg p-8">
         <h2 className="text-[#3D3D3F] font-semibold text-lg mb-6">
           Refer new Clients and you both get a cashback code $50 promotion free.
         </h2>
 
         {/* Referral Link */}
-        <div className="mb-4">
+        <div suppressHydrationWarning className="mb-4">
           <label className="block text-white mb-2">
             Please invite new client
           </label>
-          <div className="grid gap-6 sm:grid-cols-1 md:grid-cols-[auto_120px]">
+          <div suppressHydrationWarning className="grid gap-6 sm:grid-cols-1 md:grid-cols-[auto_120px]">
             <input
               type="text"
               value={referralLink}

@@ -19,9 +19,9 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="bg-[#252C47] text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 p-6 py-16 pb-8">
+      <div suppressHydrationWarning className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-8 p-6 py-16 pb-8">
         {/* Column 1 */}
-        <div>
+        <div suppressHydrationWarning>
           <h3 className="text-white font-semibold mb-4">Design Services</h3>
           <ul className="space-y-2">
             {[
@@ -43,7 +43,7 @@ export default function Footer() {
         </div>
 
         {/* Column 2 */}
-        <div>
+        <div suppressHydrationWarning>
           <h3 className="text-white font-semibold mb-4">Category</h3>
           <ul className="space-y-2">
             {[
@@ -65,7 +65,7 @@ export default function Footer() {
         </div>
 
         {/* Column 3 */}
-        <div>
+        <div suppressHydrationWarning>
           <ul className="space-y-3">
             <li>
               <Link
@@ -115,8 +115,8 @@ export default function Footer() {
           </ul>
 
           {/* Language Switcher */}
-          <div className="mt-4">
-            <div className="flex items-center gap-4">
+          <div suppressHydrationWarning className="mt-4">
+            <div suppressHydrationWarning className="flex items-center gap-4">
               <span className="px-3 py-1 rounded-full border bg-white text-black text-sm cursor-pointer hover:bg-white hover:text-[#1a1d33] transition">
                 English
               </span>
@@ -129,10 +129,10 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="w-full bg-[#13192E]">
-        <div className="max-w-7xl mx-auto sm:px-6 lg:px-8 border-t-3 border-white mt-8 py-8 px-6 flex flex-col md:flex-row justify-between items-center text-sm">
+      <div suppressHydrationWarning className="w-full bg-[#13192E]">
+        <div suppressHydrationWarning className="max-w-7xl mx-auto sm:px-6 lg:px-8 border-t-3 border-white mt-8 py-8 px-6 flex flex-col md:flex-row justify-between items-center text-sm">
           {/* Left */}
-          <div className="flex items-center gap-4 mb-4 md:mb-0">
+          <div suppressHydrationWarning className="flex items-center gap-4 mb-4 md:mb-0">
             <Image src="/logo-2.png" alt="Logo" width={100} height={40} />
             <span className="text-gray-400">|</span>
             <span className="text-gray-400 cursor-pointer hover:text-white transition">
@@ -145,8 +145,8 @@ export default function Footer() {
           </div>
 
           {/* Right */}
-          <div className="flex gap-4 text-white text-lg">
-            <div className="flex gap-4 text-white text-lg">
+          <div suppressHydrationWarning className="flex gap-4 text-white text-lg">
+            <div suppressHydrationWarning className="flex gap-4 text-white text-lg">
               <FaBehance className="h-5 w-5 cursor-pointer hover:text-gray-300 transition" />
               <FaFacebookF className="h-5 w-5 cursor-pointer hover:text-gray-300 transition" />
               <FaInstagram className="h-5 w-5 cursor-pointer hover:text-gray-300 transition" />
