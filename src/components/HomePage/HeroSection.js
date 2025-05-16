@@ -45,12 +45,12 @@ export default function Hero() {
     <section className="bg-[#F5F7FA]">
       <div
         suppressHydrationWarning
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-center justify-between"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col-reverse lg:flex-row items-stretch justify-between min-h-[520px]"
       >
         {/* Left Column */}
         <div
           suppressHydrationWarning
-          className="lg:w-1/2 w-full text-center lg:text-left"
+          className="lg:w-1/2 w-full flex flex-col justify-between pt-18 lg:pt-34 text-center lg:text-left"
         >
           <h1 className="text-3xl md:text-4xl lg:text-[52px] font-bold text-[#3D3D3F] leading-tight">
             Access to talented and creative designers for original designs

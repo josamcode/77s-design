@@ -60,31 +60,11 @@ export default function AuthForm() {
       <Toaster position="top-right" reverseOrder={false} />
 
       {/* Left Panel */}
-      <div className="md:col-span-2 flex flex-col justify-center items-center bg-gradient-to-tr from-[#474BC0] to-[#00C7C7] p-8 text-white text-center rounded-tl-2xl rounded-bl-2xl">
-        <Image
-          src="/signup/Mind.png"
-          alt="Mind Illustration"
-          width={120}
-          height={180}
-        />
-        <h1 className="mt-8 sm:text-[20px] lg:text-[30px] font-light leading-normal">
-          <span className="text-white sm:text-[30px] lg:text-[50px] font-bold">
-            Discover <br />
-          </span>
-          the world&apos;s best <br />
-          community of
-          <br />
-          <span className="text-white sm:text-[30px] lg:text-[50px] font-bold">
-            Talented
-          </span>{" "}
-          <br /> and <br />
-          business owners
-        </h1>
-      </div>
-
-      {/* Right Panel */}
-      <div className="md:col-span-4 flex flex-col justify-center px-8 py-16">
-        <div className="w-full max-w-lg mx-auto">
+      <div className="md:col-span-2 flex flex-col">
+        <div 
+          onClick={() => router.push('/')} 
+          className="cursor-pointer"
+        >
           <Image
             src="/logo.svg"
             alt="77S Logo"
@@ -92,7 +72,33 @@ export default function AuthForm() {
             height={50}
             className="mb-8"
           />
+        </div>
+        <div className="flex flex-col justify-center items-center bg-gradient-to-tr from-[#474BC0] to-[#00C7C7] p-8 text-white text-center rounded-tl-2xl rounded-bl-2xl h-full">
+          <Image
+            src="/signup/Mind.png"
+            alt="Mind Illustration"
+            width={120}
+            height={180}
+          />
+          <h1 className="mt-8 sm:text-[20px] lg:text-[30px] font-light leading-normal">
+            <span className="text-white sm:text-[30px] lg:text-[50px] font-bold">
+              Discover <br />
+            </span>
+            the world&apos;s best <br />
+            community of
+            <br />
+            <span className="text-white sm:text-[30px] lg:text-[50px] font-bold">
+              Talented
+            </span>{" "}
+            <br /> and <br />
+            business owners
+          </h1>
+        </div>
+      </div>
 
+      {/* Right Panel */}
+      <div className="md:col-span-4 flex flex-col justify-center px-8 py-18 pb-3">
+        <div className="w-full max-w-lg mx-auto">
           {/* Tabs */}
           <div className="flex space-x-12 mb-6">
             <button
@@ -116,10 +122,6 @@ export default function AuthForm() {
             >
               Log in
             </button>
-          </div>
-
-          <div className="mb-8">
-            <GoogleLoginButton userType={watch("role")} />
           </div>
 
           <p className="text-center text-base text-gray-500 mb-8">
@@ -156,6 +158,10 @@ export default function AuthForm() {
                 )}
               </div>
             )}
+
+            <div className="mb-8">
+              <GoogleLoginButton userType={watch("role")} />
+            </div>
 
             {!isLogin && (
               <div className="flex flex-col md:flex-row md:space-x-4">
